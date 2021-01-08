@@ -13,7 +13,7 @@ java -jar target/Innsmouth_Escape_Game-0.0.1-SNAPSHOT.jar
 
 ##Gameplay
 
-Game beings on the title screen. You can toggle to gameplay with esc.
+Game begins on the title screen. You can toggle to gameplay with esc.
 Arrow keys control the Sprite. You begin in the south room and can explore the
 middle and north rooms. Winning is not implemented yet but touching the green enemy sprite will end the game and bring you to the Game Over screen.
 
