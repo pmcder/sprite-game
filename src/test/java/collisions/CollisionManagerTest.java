@@ -37,8 +37,8 @@ class CollisionManagerTest {
 		//get initial position of the player
 		playerX = game.getPlayer().getX();
 		playerY = game.getPlayer().getY();
-		System.out.println(playerX);
-		System.out.println(playerY);
+		//System.out.println(playerX);
+		//System.out.println(playerY);
 		
 		//test if the player's within the screen at initial position
 		assertFalse(collisionManager.isOffScreen(playerX, playerY));
@@ -47,6 +47,8 @@ class CollisionManagerTest {
 		//outside the screen
 		playerX = game.getCurrentRoom().size + 1;
 		playerY = game.getCurrentRoom().size + 1;
+		//System.out.println(playerX);
+		//System.out.println(playerY);
 		
 		//test if the player's within the screen after re-assignment
 		assertTrue(collisionManager.isOffScreen(playerX, playerY));	
