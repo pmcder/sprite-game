@@ -45,5 +45,14 @@ public class Fishman extends Sprite {
 		Rectangle loc = new Rectangle(60*x, 60*y, 35,35);
 		return loc;
 	}
+	
+	public int getX() {
+		return x;
+	}
+
+
+	public int getY() {
+		return y;
+	}
 
 }
