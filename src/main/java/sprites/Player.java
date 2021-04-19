@@ -10,20 +10,12 @@ import graphics.Assets;
 
 public class Player extends Sprite {
 	
-	//players coordinates
-	private int x;
 	
-	private int y;
-	
-	private GameKeyAdapter gameKeyAdapter;
-	
-	private CollisionManager collisionManager;
 		
 	public Player(GameKeyAdapter gameKeyAdapter, CollisionManager collisionManager) {
-		x = 1;//initial spawn coordinates
-		y = 4;
-		this.gameKeyAdapter = gameKeyAdapter;
-		this.collisionManager = collisionManager;
+		
+		super(1, 4, gameKeyAdapter, collisionManager);
+		
 	}
 
 	@Override
