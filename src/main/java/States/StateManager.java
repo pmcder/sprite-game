@@ -1,4 +1,4 @@
-package States;
+package states;
 
 import game.GameKeyAdapter;
 

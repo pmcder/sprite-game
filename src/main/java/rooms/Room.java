@@ -2,9 +2,10 @@ package rooms;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
-import Tiles.TileFactory;
+
 import game.Game;
 import sprites.Player;
+import tiles.TileFactory;
 
 public abstract class Room {
 		

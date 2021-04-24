@@ -1,5 +1,6 @@
 package movement;
 
+import sprites.Player;
 import sprites.Sprite;
 
 
@@ -13,7 +14,7 @@ import sprites.Sprite;
 public class BasicEnemyMovementStrategy implements MovementStrategy{
 
 	@Override
-	public void move(Sprite sprite) {
+	public void move(Sprite sprite)  {
 		
 		int tempX = (int) (sprite.getX()+(Math.random()*(1+2)-1));
 		int tempY = (int) (sprite.getY()+(Math.random()*(1+2)-1));

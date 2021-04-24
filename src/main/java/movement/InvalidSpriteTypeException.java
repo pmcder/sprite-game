@@ -3,7 +3,7 @@ package movement;
 
 /**
  * Thrown when the Sprite type passed is not a valid argument for 
- * the method.
+ * the movement strategy.
  * @author patrickmcdermott
  *
  */

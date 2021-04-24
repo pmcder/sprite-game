@@ -10,6 +10,11 @@ import sprites.Sprite;
  */
 public interface MovementStrategy {
 	
+	/**
+	 * Updates x and y of sprite passed to move its position. 
+	 * @param sprite to move.
+	 * @throws InvalidSpriteTypeException if Sprite type invalid for this MovementStrategy
+	 */
 	public void move(Sprite sprite);
 
 }

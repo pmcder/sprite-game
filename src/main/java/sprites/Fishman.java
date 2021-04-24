@@ -7,6 +7,7 @@ import java.lang.Math;
 import collisions.CollisionManager;
 import graphics.Assets;
 import movement.BasicEnemyMovementStrategy;
+import movement.InvalidSpriteTypeException;
 import movement.MovementStrategy;
 
 public class Fishman extends Sprite {
@@ -26,7 +27,8 @@ public class Fishman extends Sprite {
 	@Override
 	public void tick() {
 		
-		this.movementStrategy.move(this);
+			this.movementStrategy.move(this);
+		
 	}
 
 	@Override
