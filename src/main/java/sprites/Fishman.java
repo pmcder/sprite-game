@@ -39,7 +39,6 @@ public class Fishman extends Sprite {
 		return loc;
 	}
 	
-	
 
 
 }
