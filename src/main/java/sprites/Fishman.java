@@ -6,8 +6,12 @@ import java.lang.Math;
 
 import collisions.CollisionManager;
 import graphics.Assets;
+import movement.BasicEnemyMovementStrategy;
+import movement.MovementStrategy;
 
 public class Fishman extends Sprite {
+	
+	MovementStrategy movementStrategy;
 	
 	/**
 	 * Constructor will spawn fishman in the hallway on the right of the screen.
@@ -16,17 +20,13 @@ public class Fishman extends Sprite {
 	public Fishman(CollisionManager collisionManager) {
 		
 		super(((int) (Math.random()*(10-9))+9),((int) (Math.random()*(10-2))+2),collisionManager);
+		this.movementStrategy = new BasicEnemyMovementStrategy();
 	}
 	
 	@Override
 	public void tick() {
 		
-		int tempX = (int) (x+(Math.random()*(1+2)-1));
-		int tempY = (int) (y+(Math.random()*(1+2)-1));
-		if (!this.collisionManager.isSolid(tempX, tempY)) {
-			this.x = tempX;
-			this.y = tempY;
-			}
+		this.movementStrategy.move(this);
 	}
 
 	@Override
@@ -39,13 +39,7 @@ public class Fishman extends Sprite {
 		return loc;
 	}
 	
-	public int getX() {
-		return x;
-	}
+	
 
-
-	public int getY() {
-		return y;
-	}
 
 }
