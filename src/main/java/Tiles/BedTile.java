@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import graphics.Assets;
 
-public class BedTile extends Tile {
+public class BedTile extends Tile  {
 
 	public BedTile(int x, int y) {
 		super(x, y);
@@ -19,5 +19,7 @@ public class BedTile extends Tile {
 	public boolean isSolid() {
 		return true;
 	}
+
+	
 
 }
