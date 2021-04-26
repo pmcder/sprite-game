@@ -32,8 +32,10 @@ public class CollisionManager  {
 	 * @return true if there is a collision. returns false if not.
 	 */
 	public boolean checkEnemies() {
-		return game.getFishman().getLocation().intersects(this.game.getPlayer().getLocation());
-	}
+		//return game.getFishman().getLocation().intersects(this.game.getPlayer().getLocation());
+		return game.getFishemen().parallelStream().anyMatch(p->(p.getLocation().intersects(this.game.getPlayer().getLocation())==true));
+		}
+		
 	
 	/**
 	 * Checks for collision with wall.

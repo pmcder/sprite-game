@@ -1,7 +1,12 @@
 package game;
 
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 import collisions.CollisionManager;
+import items.Bed;
+import items.Item;
 import rooms.MiddleRoom;
 import rooms.NorthRoom;
 import rooms.Room;
@@ -27,6 +32,8 @@ public class Game {
 	
 	private Room northRoom = new NorthRoom();
 	
+	private ArrayList<Fishman> fishmen;
+	
 	public Game(GameKeyAdapter gameKeyAdapter) {
 		
 		this.setGameKeyAdapter(gameKeyAdapter);
@@ -36,21 +43,23 @@ public class Game {
 		collisionManager = new CollisionManager(this);
 		
 		player = new Player(gameKeyAdapter, collisionManager);
-		
-		fishman = new Fishman(collisionManager);
-		
+			
+		fishmen = new ArrayList<Fishman>(Arrays.asList(new Fishman(collisionManager),new Fishman(collisionManager)));
+			
 	}
+	
 	
 	public void tick() {
 		collisionManager.checkDoors();
 		this.player.tick();
-		this.fishman.tick();
+		this.fishmen.parallelStream().forEach(f->f.tick());;
 	}
 	
 	public void render(Graphics g) {
 		this.currentRoom.render(g);
 		this.player.render(g);
-		this.fishman.render(g);
+		this.fishmen.parallelStream().forEach(f->f.render(g));
+		
 	}
 	
 	public Room getCurrentRoom() {
@@ -115,6 +124,14 @@ public class Game {
 
 	public void setCollisionManager(CollisionManager collisionManager) {
 		this.collisionManager = collisionManager;
+	}
+
+	public ArrayList<Fishman> getFishemen() {
+		return fishmen;
+	}
+
+	public void setFishemen(ArrayList<Fishman> fishemen) {
+		this.fishmen = fishemen;
 	}
 	
 	
