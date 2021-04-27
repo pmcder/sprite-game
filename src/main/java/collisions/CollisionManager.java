@@ -27,12 +27,11 @@ public class CollisionManager  {
 	}
 	
 	/**
-	 * Checks player and enemy's position by calling intersect on 
-	 * their respective locations.
+	 * Checks player and enemies' positions 
+	 * for collisions
 	 * @return true if there is a collision. returns false if not.
 	 */
 	public boolean checkEnemies() {
-		//return game.getFishman().getLocation().intersects(this.game.getPlayer().getLocation());
 		return game.getFishemen().parallelStream().anyMatch(p->(p.getLocation().intersects(this.game.getPlayer().getLocation())==true));
 		}
 		

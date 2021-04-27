@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import collisions.CollisionManager;
-import items.Bed;
-import items.Item;
 import rooms.MiddleRoom;
 import rooms.NorthRoom;
 import rooms.Room;
@@ -19,8 +17,6 @@ public class Game {
 	private Room currentRoom; //room displayed and where player is located
 	
 	private Player player; //player 
-	
-	private Fishman fishman;
 	
 	private GameKeyAdapter gameKeyAdapter;
 	
@@ -44,7 +40,8 @@ public class Game {
 		
 		player = new Player(gameKeyAdapter, collisionManager);
 			
-		fishmen = new ArrayList<Fishman>(Arrays.asList(new Fishman(collisionManager),new Fishman(collisionManager)));
+		fishmen = new ArrayList<Fishman>(Arrays.asList(new Fishman(collisionManager),new Fishman(collisionManager),new Fishman(collisionManager)
+				,new Fishman(collisionManager)));
 			
 	}
 	
@@ -108,14 +105,6 @@ public class Game {
 
 	public void setGameKeyAdapter(GameKeyAdapter gameKeyAdapter) {
 		this.gameKeyAdapter = gameKeyAdapter;
-	}
-
-	public Fishman getFishman() {
-		return fishman;
-	}
-
-	public void setFishman(Fishman fishman) {
-		this.fishman = fishman;
 	}
 
 	public CollisionManager getCollisionManager() {

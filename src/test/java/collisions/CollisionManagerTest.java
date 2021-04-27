@@ -16,21 +16,6 @@ class CollisionManagerTest {
 	int playerX;
 	int playerY;
 	
-	
-	@Test
-	void testCheckEnemies() {
-		//test initial positions of the enemies
-		assertFalse(collisionManager.checkEnemies());
-		
-		//re-assign location of the Player to that of the Fishman
-		fishmanX = game.getFishman().getX();
-		fishmanY = game.getFishman().getY();
-		
-		game.getPlayer().setPosition(fishmanX, fishmanY);
-		
-		//test positions of the enemies after re-assignment
-		assertTrue(collisionManager.checkEnemies());
-	}
 
 	@Test
 	void testIsOffScreen() {
