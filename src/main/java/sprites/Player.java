@@ -3,8 +3,7 @@ package sprites;
 import java.awt.Graphics;
 import java.awt.Rectangle;
 
-import collisions.CollisionManager;
-import game.GameKeyAdapter;
+
 import graphics.Assets;
 
 
@@ -12,9 +11,9 @@ public class Player extends Sprite {
 	
 	
 		
-	public Player(GameKeyAdapter gameKeyAdapter, CollisionManager collisionManager) {
+	public Player() {
 		
-		super(1, 4, gameKeyAdapter, collisionManager);
+		super(1, 4);
 		
 	}
 
@@ -25,8 +24,7 @@ public class Player extends Sprite {
 
 	@Override
 	public void tick() {
-		moveX();
-		moveY();
+		
 		}
 	
 	public Rectangle getLocation() {
@@ -34,35 +32,6 @@ public class Player extends Sprite {
 		return loc;
 	}
 	
-	/**
-	 * Checks for collision with solid tile.
-	 * Moves sprite right or left
-	 */
-	public void moveX() {
-		int tempX = this.x + gameKeyAdapter.getMoveX();
-		int tempY = this.y + gameKeyAdapter.getMoveY();
-		if (!this.collisionManager.isSolid(tempX, tempY)) {
-		this.x = this.x + gameKeyAdapter.getMoveX();
-		}
-		else {
-			return;
-		}
-	}
-	
-	/**
-	 * Checks for collision with solid tile.
-	 * Moves sprite up or down
-	 */
-	public void moveY() {
-		int tempX = this.x + gameKeyAdapter.getMoveX();
-		int tempY = this.y + gameKeyAdapter.getMoveY();
-		if (!this.collisionManager.isSolid(tempX, tempY)) {
-			this.y = this.y + gameKeyAdapter.getMoveY();
-			}
-			else {
-				return;
-			}
-	}
 	
 	public void setPosition(int x, int y) {
 		this.x = x;

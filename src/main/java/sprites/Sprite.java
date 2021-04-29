@@ -11,8 +11,6 @@ public abstract class Sprite {
 
 	int y;
 
-	protected GameKeyAdapter gameKeyAdapter;
-
 	protected CollisionManager collisionManager;
 
 	/**
@@ -23,15 +21,12 @@ public abstract class Sprite {
 	 * @param x coordinate to spawn sprite at as int.
 	 * @param y coordinate to spawn sprite at as int.
 	 */
-	public Sprite(int x, int y, GameKeyAdapter gameKeyAdapter, CollisionManager collisionManager) {
+	public Sprite(int x, int y) {
 
 		this.x = x;
 
 		this.y = y;
 
-		this.gameKeyAdapter = gameKeyAdapter;
-
-		this.collisionManager = collisionManager;
 	}
 
 	/**

@@ -26,9 +26,7 @@ public class Fishman extends Sprite {
 	
 	@Override
 	public void tick() {
-		
-			this.movementStrategy.move(this);
-		
+			this.movementStrategy.move(this);	
 	}
 
 	@Override

@@ -38,7 +38,7 @@ public class Game {
 		
 		collisionManager = new CollisionManager(this);
 		
-		player = new Player(gameKeyAdapter, collisionManager);
+		player = new Player();
 			
 		fishmen = new ArrayList<Fishman>(Arrays.asList(new Fishman(collisionManager),new Fishman(collisionManager),new Fishman(collisionManager)
 				,new Fishman(collisionManager)));
@@ -47,8 +47,26 @@ public class Game {
 	
 	
 	public void tick() {
+		
 		collisionManager.checkDoors();
-		this.player.tick();
+		
+		int Xmove = player.getX();
+		int Ymove = player.getY();
+		
+		int tempX = player.getX() + gameKeyAdapter.getMoveX();
+		int tempY = player.getY() + gameKeyAdapter.getMoveY();
+		if (!this.collisionManager.isSolid(tempX, tempY)) {
+			Xmove = player.getX() + gameKeyAdapter.getMoveX();
+		}
+		
+		tempX = player.getX() + gameKeyAdapter.getMoveX();
+		tempY = player.getY() + gameKeyAdapter.getMoveY();
+			if (!this.collisionManager.isSolid(tempX, tempY)) {
+				Ymove = player.getY()+gameKeyAdapter.getMoveY();
+			}
+			
+		this.player.setPosition(Xmove, Ymove);
+		
 		this.fishmen.parallelStream().forEach(f->f.tick());;
 	}
 	

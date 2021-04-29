@@ -52,6 +52,7 @@ public class CollisionManager  {
 		return false;
 	}
 	
+	
 	/**
 	 * checks player not off edge of screen
 	 * @param x sprite coordinate
