@@ -7,8 +7,8 @@ I was focused on the game logic. At some point I will upgrade the sprites.
 
 ## How to run
 
-cd into the project directory and run
-mvn clean package
+cd into the project directory and run</br>
+mvn clean package</br>
 java -jar target/Innsmouth_Escape_Game-0.0.1-SNAPSHOT.jar
 
 ## Gameplay
